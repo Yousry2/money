@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BudgetsComponent } from './pages/budgets/budgets/budgets.component';
+import { BudgetsModule } from './pages/budgets/budgets.module';
 
 const routes: Routes = [
   { path: '', redirectTo: '/budgets', pathMatch: 'full' },
@@ -8,7 +9,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), BudgetsModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
