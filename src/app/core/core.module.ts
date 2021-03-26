@@ -4,7 +4,11 @@ import { LoggerService } from './logger/logger.service';
 import { ConsoleLoggerService } from './logger/console-logger/console-logger.service';
 import { AuthService } from './auth/auth.service';
 import { MoneyAuthService } from './auth/money-auth/money-auth.service';
-import { httpInterceptorProviders } from './http/interceptors'
+import { httpInterceptorProviders } from './http/interceptors';
+import { BudgetsApiService } from './api/budgets-api.service';
+import { AccountsApiService } from './api/accounts-api.service';
+import { PayeessApiService } from './api/payees-api.service';
+
 
 
 @NgModule({
@@ -12,6 +16,9 @@ import { httpInterceptorProviders } from './http/interceptors'
   providers: [
     { provide: LoggerService, useClass: ConsoleLoggerService },
     { provide: AuthService, useClass: MoneyAuthService },
+    BudgetsApiService,
+    AccountsApiService,
+    PayeessApiService,
     httpInterceptorProviders
   ],
   imports: [
