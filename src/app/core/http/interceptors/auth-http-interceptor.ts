@@ -21,7 +21,7 @@ export class AuthHttpInterceptor implements HttpInterceptor {
   }
 
   private addExtraHeaders(headers: HttpHeaders): HttpHeaders {
-    const newHeader = headers.append('Authorization', 'bearer c29b76316014cd70feebecd0546d3c9e618e27bb1dedffd7e4bb17660187fed3');
+    const newHeader = headers.append('Authorization', 'bearer 1bfd98beecfcade0b0d60539e5124d4e47ccf3e24c63515f0f12fd720cf6f3a8');
     return newHeader;
   }
 }

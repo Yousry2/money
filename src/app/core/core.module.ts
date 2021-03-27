@@ -8,6 +8,7 @@ import { httpInterceptorProviders } from './http/interceptors';
 import { BudgetsApiService } from './api/budgets-api.service';
 import { AccountsApiService } from './api/accounts-api.service';
 import { PayeessApiService } from './api/payees-api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -22,7 +23,8 @@ import { PayeessApiService } from './api/payees-api.service';
     httpInterceptorProviders
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ]
 })
 export class CoreModule { }
