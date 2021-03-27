@@ -1,0 +1,41 @@
+<div class="wrapper margin-40">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8  full-width budget-table" matSort
+      aria-label="Elements">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element['id']}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element['name']}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="first_month">
+        <th mat-header-cell *matHeaderCellDef> First Month </th>
+        <td mat-cell *matCellDef="let element"> {{element.first_month}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="last_month">
+        <th mat-header-cell *matHeaderCellDef> Last Month </th>
+        <td mat-cell *matCellDef="let element"> {{element.last_month}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="accounts">
+        <th mat-header-cell *matHeaderCellDef> Accounts </th>
+        <td mat-cell *matCellDef="let element">
+          <a routerLink="../{{element.id}}/accounts" routerLinkActive="active">Accounts</a></td>
+      </ng-container>
+
+      <ng-container matColumnDef="payees">
+        <th mat-header-cell *matHeaderCellDef> Payees </th>
+        <td mat-cell *matCellDef="let element">
+          <a routerLink="../{{element.id}}/payees" routerLinkActive="active">Payees</a> </td>
+      </ng-container>
+
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
