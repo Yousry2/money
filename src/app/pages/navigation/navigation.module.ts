@@ -13,6 +13,6 @@ import { SharedModule } from '../../shared/shared.module';
     LayoutModule,
     SharedModule
   ],
-  exports:[SideNavComponent]
+  exports: [SideNavComponent]
 })
 export class NavigationModule { }
