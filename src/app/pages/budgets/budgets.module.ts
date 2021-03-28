@@ -11,11 +11,12 @@ import { PayeeListComponent } from './payee-list/payee-list.component';
 import { PayeeTransactionsComponent } from './payee-transactions/payee-transactions.component';
 import { PayeesComponent } from './payees/payees.component';
 import { TableComponent } from './table/table.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 
 
 @NgModule({
-  declarations: [TableComponent, BudgetsComponent, AccountsComponent, PayeesComponent, BudgetListComponent, BudgetDetailsComponent, PayeeDetailsComponent, PayeeTransactionsComponent, PayeeListComponent],
+  declarations: [TableComponent, BudgetsComponent, AccountsComponent, PayeesComponent, BudgetListComponent, BudgetDetailsComponent, PayeeDetailsComponent, PayeeTransactionsComponent, PayeeListComponent, AccountDetailsComponent],
   imports: [
     CommonModule, SharedModule, BudgetsRoutingModule
   ]
