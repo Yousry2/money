@@ -21,4 +21,8 @@ export class RightOverlayComponent implements OnInit {
   public open(){
     this.matDrawerElement?.open();
   };
+
+  public close(){
+    this.matDrawerElement?.close();
+  };
 }
