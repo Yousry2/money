@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Account } from '../../../core/models';
 import { Route } from '@angular/compiler/src/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AccountsApiService } from '../../../core/api/accounts-api.service';
+import { AccountDetailsComponent } from '../account-details/account-details.component';
+import { RightOverlayComponent } from '../../../shared/right-overlay/right-overlay.component';
 
 @Component({
   selector: 'money-accounts',
@@ -12,10 +14,11 @@ import { AccountsApiService } from '../../../core/api/accounts-api.service';
 })
 export class AccountsComponent implements OnInit {
 
-
+  @ViewChild('accountDetails') accountDetails!: AccountDetailsComponent;
+  @ViewChild('rightOverlay') rightOverlay!: RightOverlayComponent;
   dataSource = new MatTableDataSource<Account>();
   displayedColumns: string[] = [];
-  budgetId?: string;
+  budgetId!: string;
   constructor(private accountsApiService: AccountsApiService, private route: ActivatedRoute) {
 
   }
@@ -35,6 +38,21 @@ export class AccountsComponent implements OnInit {
       this.accountsApiService.getAccounts(this.budgetId).subscribe(
         (accounts: any) => this.dataSource.data = accounts
       );
+  }
+
+  addNewAccount() {
+    this.accountDetails.init();
+    this.rightOverlay.open();
+  }
+
+  closeRightOverlay(){
+    this.rightOverlay.close();
+  }
+
+  onAddNewAccountSuccess(){
+    this.rightOverlay.close();
+    this.refresh();
+
   }
 
 }
