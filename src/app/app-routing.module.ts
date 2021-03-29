@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import { BudgetsComponent } from './pages/budgets/budgets.component';
+
+export const routingConfiguration: ExtraOptions = {
+  paramsInheritanceStrategy: 'always'
+};
 
 
 const routes: Routes = [
@@ -8,7 +12,9 @@ const routes: Routes = [
   { path: 'budgets', component: BudgetsComponent }
 ];
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, routingConfiguration)],
   exports: [RouterModule]
 })
+
+
 export class AppRoutingModule { }

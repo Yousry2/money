@@ -9,6 +9,7 @@ import { BudgetsApiService } from './api/budgets-api.service';
 import { AccountsApiService } from './api/accounts-api.service';
 import { PayeessApiService } from './api/payees-api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TransactionsApiService } from './api/transactions-api.service';
 
 
 
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     BudgetsApiService,
     AccountsApiService,
     PayeessApiService,
+    TransactionsApiService,
     httpInterceptorProviders
   ],
   imports: [
