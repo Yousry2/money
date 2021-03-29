@@ -1,0 +1,62 @@
+<div class="wrapper">
+
+    <div class="padding-40 accounts-table full-width">
+        <div class="mat-elevation-z8 full-width">
+            <table mat-table matSort [dataSource]="dataSource" class="mat-elevation-z8 full-width">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="amount">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+                    <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="cleared">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cleared </th>
+                    <td mat-cell *matCellDef="let element"> {{element.cleared}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="flag_color">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Flag Color </th>
+                    <td mat-cell *matCellDef="let element"> {{element.flag_color}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="account_name">
+                    <th mat-header-cell *matHeaderCellDef> Account Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.account_name}}
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="payee_name">
+                    <th mat-header-cell *matHeaderCellDef> Payee Name </th>
+
+                    <td mat-cell *matCellDef="let element">
+                        <a routerLink="/budgets/{{budgetId}}/payees/{{element.payeeId}}"
+                            routerLinkActive="active">{{element.payee_name}}
+                        </a>
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="category_name">
+                    <th mat-header-cell *matHeaderCellDef> Category Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.category_name}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <div class="horizontal-end">
+                <mat-paginator #paginator [length]="dataSource?.data?.length" [pageIndex]="0" [pageSize]="10"
+                    [pageSizeOptions]="[5, 10, 20]">
+                </mat-paginator>
+            </div>
+        </div>
+    </div>
+</div>

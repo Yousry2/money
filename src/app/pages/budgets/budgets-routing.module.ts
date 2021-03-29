@@ -24,7 +24,7 @@ const routes: Routes = [
               { path: '', redirectTo: 'list', pathMatch: 'full' },
               { path: 'list', component: PayeeListComponent },
               {
-                path: ':payeeid', component: PayeeDetailsComponent, children:
+                path: ':payeeId', component: PayeeDetailsComponent, children:
                   [
                     { path: 'transactions', component: PayeeTransactionsComponent }
                   ]
