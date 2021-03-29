@@ -1,9 +1,14 @@
-<mat-sidenav-container class="sidenav-container" [hasBackdrop]="false" >
+<mat-sidenav-container class="sidenav-container" [hasBackdrop]="false">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'side' : 'side'" [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar class="project-icon">
+      <img src="/assets/images/icons/android-chrome-192x192.png" alt="">
+    </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/">Home</a>
+      <mat-list-item color="primary" (click)="goTo('/')">
+        <mat-icon matListIcon>account_balance_wallet</mat-icon>
+        <a color="primary" mat-list-item>Budgets</a>
+      </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -14,9 +19,9 @@
       </button>
       <span>{{$pageName | async}}</span>
     </mat-toolbar>
-    
-      <ng-content style="width: 100%;"></ng-content>
-    
+
+    <ng-content style="width: 100%;"></ng-content>
+
     <!-- Add Content Here -->
   </mat-sidenav-content>
 </mat-sidenav-container>
