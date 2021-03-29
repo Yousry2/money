@@ -8,7 +8,8 @@ export const routingConfiguration: ExtraOptions = {
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/budgets', pathMatch: 'full' },
+  { path: '', redirectTo: '/budgets/list', pathMatch: 'full' },
+  { path: 'budgets', redirectTo: '/budgets/list', pathMatch: 'full' },
   { path: 'budgets', component: BudgetsComponent }
 ];
 @NgModule({
