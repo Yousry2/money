@@ -1,0 +1,8 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="over" #matDrawer position="end">
+    <ng-container *ngTemplateOutlet="rightOverlayContent!"></ng-container>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-container *ngTemplateOutlet="mainPageContent!"></ng-container>
+  </mat-drawer-content>
+</mat-drawer-container>

@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+
+$money-theme-primary : mat-palette($mat-red);
+$money-theme-accent : mat-palette($mat-brown);
+$money-theme-warn : mat-palette($mat-yellow);
+
+
+
+$money-theme : mat-light-theme($money-theme-primary, $money-theme-accent, $money-theme-warn);
+
+@include angular-material-theme($money-theme);

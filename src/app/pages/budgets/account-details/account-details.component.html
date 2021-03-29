@@ -1,0 +1,58 @@
+<form *ngIf="showForm" [formGroup]="accountDetailsForm" (ngSubmit)="onSubmit()" class="full-height account-details">
+    <mat-card class="full-height account-card">
+        <mat-card-header>
+            <mat-card-title>Add New Account</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput maxlength="30" #name placeholder="Account Name" formControlName="name">
+                        <mat-hint align="end">{{name.value.length}} / 30</mat-hint>
+                        <mat-error *ngIf="accountDetailsForm.controls['name'].hasError('required')">
+                            Account Name is <strong>required</strong>
+                        </mat-error>
+                        <mat-error
+                            *ngIf=" !accountDetailsForm.controls['name'].hasError('required') &&  accountDetailsForm.controls['name'].hasError('maxLength')">
+                            Account Balance can't be more than 30 characters <strong></strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-select placeholder="Account Type" formControlName="type">
+                            <mat-option *ngFor="let type of accountTypeList" [value]="type.id">
+                                {{ type.name }}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="accountDetailsForm.controls['type'].hasError('required')">
+                            Account Type is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <input matInput maxlength="1" #balance placeholder="Account Balance" formControlName="balance"
+                            type="number">
+
+                        <mat-error *ngIf="accountDetailsForm.controls['balance'].hasError('required')">
+                            Account Balance is <strong>required</strong>
+                        </mat-error>
+                        <mat-error
+                            *ngIf=" !accountDetailsForm.controls['balance'].hasError('required') &&  accountDetailsForm.controls['balance'].hasError('maxLength')">
+                            Account Balance can't be more than <strong> 1000000</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+            <button mat-raised-button color="primary" type="submit">Submit</button>
+        </mat-card-actions>
+    </mat-card>
+</form>
