@@ -1,7 +1,6 @@
 // src/app/auth/auth.service.ts
 
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import { LoggerService } from '../logger.service';
 import { LogMessage } from '../log-message'
 
