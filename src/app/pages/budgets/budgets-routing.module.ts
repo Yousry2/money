@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BudgetsComponent } from './budgets/budgets.component';
+import { BudgetsComponent } from './budgets.component';
 import { BudgetListComponent } from './list/budget-list.component';
 import { BudgetDetailsComponent } from './budget-details/budget-details.component';
 import { AccountsComponent } from './accounts/accounts.component';

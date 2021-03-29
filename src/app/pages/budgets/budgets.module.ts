@@ -4,19 +4,18 @@ import { SharedModule } from '../../shared/shared.module';
 import { AccountsComponent } from './accounts/accounts.component';
 import { BudgetDetailsComponent } from './budget-details/budget-details.component';
 import { BudgetsRoutingModule } from './budgets-routing.module';
-import { BudgetsComponent } from './budgets/budgets.component';
+import { BudgetsComponent } from './budgets.component';
 import { BudgetListComponent } from './list/budget-list.component';
 import { PayeeDetailsComponent } from './payee-details/payee-details.component';
 import { PayeeListComponent } from './payee-list/payee-list.component';
 import { PayeeTransactionsComponent } from './payee-transactions/payee-transactions.component';
 import { PayeesComponent } from './payees/payees.component';
-import { TableComponent } from './table/table.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 
 
 
 @NgModule({
-  declarations: [TableComponent, BudgetsComponent, AccountsComponent, PayeesComponent, BudgetListComponent, BudgetDetailsComponent, PayeeDetailsComponent, PayeeTransactionsComponent, PayeeListComponent, AccountDetailsComponent],
+  declarations: [BudgetsComponent, AccountsComponent, PayeesComponent, BudgetListComponent, BudgetDetailsComponent, PayeeDetailsComponent, PayeeTransactionsComponent, PayeeListComponent, AccountDetailsComponent],
   imports: [
     CommonModule, SharedModule, BudgetsRoutingModule
   ]
