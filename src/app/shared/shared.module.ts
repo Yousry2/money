@@ -4,10 +4,11 @@ import { MaterialModule } from './material/material.module';
 import { RightOverlayComponent } from './right-overlay/right-overlay.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { BasicComponent } from './basic/basic.component';
 
 
 @NgModule({
-  declarations: [RightOverlayComponent],
+  declarations: [RightOverlayComponent, BasicComponent],
   imports: [
     CommonModule,
     MaterialModule,

@@ -10,12 +10,14 @@ import { AccountsApiService } from './api/accounts-api.service';
 import { PayeessApiService } from './api/payees-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TransactionsApiService } from './api/transactions-api.service';
+import { PageSetupService } from './basic/page-setup.service';
 
 
 
 @NgModule({
   declarations: [],
   providers: [
+    PageSetupService,
     { provide: LoggerService, useClass: ConsoleLoggerService },
     { provide: AuthService, useClass: MoneyAuthService },
     BudgetsApiService,

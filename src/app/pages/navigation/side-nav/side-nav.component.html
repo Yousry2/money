@@ -12,7 +12,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Money App</span>
+      <span>{{$pageName | async}}</span>
     </mat-toolbar>
     
       <ng-content style="width: 100%;"></ng-content>

@@ -1,19 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injector } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Budget } from '../../../core/models';
 import { BudgetsApiService } from '../../../core/api/budgets-api.service';
+import { BasicComponent } from '../../../shared/basic/basic.component';
 
 @Component({
   selector: 'money-budgets',
   templateUrl: './budget-list.component.html',
   styleUrls: ['./budget-list.component.scss']
 })
-export class BudgetListComponent implements OnInit {
+export class BudgetListComponent extends BasicComponent implements OnInit {
 
+  pageName = "Budgets";
   dataSource = new MatTableDataSource<Budget>();
-  displayedColumns : string[] = []
-  constructor(private budgetsApiService: BudgetsApiService) {
-
+  displayedColumns: string[] = [];
+  constructor(private budgetsApiService: BudgetsApiService, public injector: Injector) {
+    super(injector);
   }
 
   ngOnInit(): void {
